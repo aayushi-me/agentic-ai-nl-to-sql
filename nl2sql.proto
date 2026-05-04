@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+service NL2SQLAgent {
+  rpc Translate (NL2SQLRequest) returns (NL2SQLResponse);
+}
+
+message NL2SQLRequest {
+  string nl_query = 1;
+  string schema = 2;
+}
+
+message NL2SQLResponse {
+  string sql = 1;
+}
